@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benefício Zé Led</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      min-height: 100vh;
+    }
+
+    .pagina {
+      min-height: 100vh;
+      width: 100%;
+      max-width: 480px;
+      margin: auto;
+      padding: 45px 28px 30px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -3px;
+      margin-bottom: 2px;
+    }
+
+    .sublogo {
+      font-size: 10px;
+      letter-spacing: 5px;
+      margin-bottom: 35px;
+    }
+
+    .linha {
+      width: 45px;
+      height: 2px;
+      background: #aaa;
+      margin: 0 auto 38px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      display: block;
+      font-size: 58px;
+      margin-top: 5px;
+    }
+
+    .descricao {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 auto 45px;
+      max-width: 360px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+      height: 65px;
+      border: 1.5px solid #c8c8c8;
+      border-radius: 10px;
+      padding: 0 20px;
+      font-size: 18px;
+      outline: none;
+      margin-bottom: 18px;
+    }
+
+    input:focus {
+      border-color: #000;
+    }
+
+    button {
+      width: 100%;
+      height: 68px;
+      border: none;
+      border-radius: 12px;
+      background: #080808;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .rodape {
+      margin-top: auto;
+      padding-top: 45px;
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 4px;
+      line-height: 1.5;
+    }
+
+    #voucher {
+      display: none;
+    }
+
+    .check {
+      width: 72px;
+      height: 72px;
+      background: #080808;
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 38px;
+    }
+
+    .liberado {
+      font-size: 43px;
+      line-height: 1;
+      margin-bottom: 35px;
+    }
+
+    .beneficio-de {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+    }
+
+    .nome-voucher {
+      background: #f3f3f3;
+      border-radius: 10px;
+      padding: 20px 10px;
+      font-size: 21px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .print {
+      background: #f3f3f3;
+      border-radius: 10px;
+      padding: 22px 15px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .instrucao {
+      font-size: 17px;
+      line-height: 1.45;
+      margin-bottom: 30px;
+    }
+
+    .validade {
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 380px) {
+      .pagina {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      h1 span {
+        font-size: 50px;
+      }
+
+      .logo {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRIMEIRA TELA -->
+  <main class="pagina" id="inicio">
+
+    <div class="logo">ZÉ LED</div>
+    <div class="sublogo">ILUMINAÇÃO AUTOMOTIVA</div>
+
+    <div class="linha"></div>
+
+    <h1>
+      VOCÊ GANHOU
+      <span>10% OFF</span>
+    </h1>
+
+    <p class="descricao">
+      Por ter participado desse momento com a Zé Led,
+      você ganhou uma condição exclusiva para seu próximo projeto.
+    </p>
+
+    <label for="nome">DIGITE SEU NOME:</label>
+
+    <input
+      type="text"
+      id="nome"
+      placeholder="Seu nome aqui"
+      autocomplete="name"
+    >
+
+    <button onclick="liberarBeneficio()">
+      LIBERAR MEU BENEFÍCIO →
+    </button>
+
+    <div class="rodape">
+      MAIS QUE ILUMINAÇÃO.<br>
+      É EVOLUÇÃO.
+    </div>
+
+  </main>
+
+
+  <!-- TELA DO VOUCHER -->
+  <main class="pagina" id="voucher">
+
+    <div class="logo">ZÉ LED</div>
+    <div class="sublogo">ILUMINAÇÃO AUTOMOTIVA</div>
+
+    <div class="linha"></div>
+
+    <div class="check">✓</div>
+
+    <h1 class="liberado">
+      10% OFF<br>
+      LIBERADO
+    </h1>
+
+    <div class="beneficio-de">
+      BENEFÍCIO DE:
+    </div>
+
+    <div class="nome-voucher" id="nomeVoucher">
+      CLIENTE
+    </div>
+
+    <div class="print">
+      📷 TIRE UM PRINT DESTA TELA
+    </div>
+
+    <p class="instrucao">
+      Apresente este print na
+      <strong>Zé Led Iluminação Automotiva</strong>
+      para garantir seu <strong>10% de desconto.</strong>
+    </p>
+
+    <div class="validade">
+      VÁLIDO ATÉ: 30/09/2026
+    </div>
+
+    <div class="rodape">
+      MAIS QUE ILUMINAÇÃO.<br>
+      É EVOLUÇÃO.
+    </div>
+
+  </main>
+
+
+  <script>
+    function liberarBeneficio() {
+      const campo = document.getElementById("nome");
+      const nome = campo.value.trim();
+
+      if (nome.length < 2) {
+        alert("Digite seu nome para liberar o benefício.");
+        campo.focus();
+        return;
+      }
+
+      document.getElementById("nomeVoucher").textContent = nome;
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("voucher").style.display = "flex";
+
+      window.scrollTo(0, 0);
+    }
+
+    document.getElementById("nome").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        liberarBeneficio();
+      }
+    });
+  </script>
+
+</body>
+</html>
